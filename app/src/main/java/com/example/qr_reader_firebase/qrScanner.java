@@ -70,7 +70,7 @@ public class qrScanner extends AppCompatActivity implements ZXingScannerView.Res
         @Override
         public void onComplete(@NonNull Task<Void> task) {
 
-            MainActivity.showdata.setText("Staff Id"+data);
+            MainActivity.showdata.setText("Staff Id:"+data);
             onBackPressed();
         }
     });

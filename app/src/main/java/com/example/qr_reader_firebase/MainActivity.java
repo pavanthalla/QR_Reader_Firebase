@@ -23,16 +23,22 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     Button reqbutton;
     String parentid;
+    RequestData rd1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        rd1=new RequestData();
         showdata=findViewById(R.id.textView);
         button=findViewById(R.id.button);
         reqbutton=findViewById(R.id.button2);
 
-        parentid="Ravi parent of Pavan Thalla";
+
+
+        parentid="X parent of Y";
+        rd1.setMessage(parentid);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 databaseReference= FirebaseDatabase.getInstance().getReference("staff").child(qrScanner.data);
 
-                databaseReference.push().setValue(parentid).addOnCompleteListener(new OnCompleteListener<Void>() {
+                databaseReference.setValue(rd1).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(getApplicationContext(),"Request Sent Succesfully",Toast.LENGTH_LONG).show();

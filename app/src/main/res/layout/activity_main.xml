@@ -21,8 +21,7 @@
         android:layout_width="228dp"
         android:layout_height="56dp"
         android:layout_weight="1"
-        android:hint="Staff ID and Data"
-        android:text="TextView"
+        android:hint="Staff ID "
         android:textSize="20sp"
         android:translationX="100dp"
         android:translationY="400dp" />
